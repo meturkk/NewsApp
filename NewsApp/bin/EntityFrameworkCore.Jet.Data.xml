@@ -1,0 +1,505 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFrameworkCore.Jet.Data</name>
+    </assembly>
+    <members>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetCommand.#ctor(EntityFrameworkCore.Jet.Data.JetConnection,System.String,EntityFrameworkCore.Jet.Data.JetTransaction)">
+            <summary>
+            Initializes a new instance of the <see cref="T:EntityFrameworkCore.Jet.Data.JetCommand"/> class.
+            </summary>
+            <param name="commandText">The command text.</param>
+            <param name="connection">The connection.</param>
+            <param name="transaction">The transaction.</param>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetCommand.Cancel">
+            <summary>
+            Attempts to Cancels the command execution
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetCommand.CommandText">
+            <summary>
+            Gets or sets the command text.
+            </summary>
+            <value>
+            The command text.
+            </value>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetCommand.CommandTimeout">
+            <summary>
+            Gets or sets the command timeout.
+            </summary>
+            <value>
+            The command timeout.
+            </value>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetCommand.CommandType">
+            <summary>
+            Gets or sets the type of the command.
+            </summary>
+            <value>
+            The type of the command.
+            </value>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetCommand.CreateDbParameter">
+            <summary>
+            Creates the database parameter.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetCommand.DbConnection">
+            <summary>
+            Gets or sets the database connection.
+            </summary>
+            <value>
+            The database connection.
+            </value>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetCommand.DbParameterCollection">
+            <summary>
+            Gets the database parameter collection.
+            </summary>
+            <value>
+            The database parameter collection.
+            </value>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetCommand.DbTransaction">
+            <summary>
+            Gets or sets the database transaction.
+            </summary>
+            <value>
+            The database transaction.
+            </value>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetCommand.DesignTimeVisible">
+            <summary>
+            Gets or sets a value indicating whether is design time visible.
+            </summary>
+            <value>
+              <c>true</c> if design time visible; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetCommand.ExecuteDbDataReader(System.Data.CommandBehavior)">
+            <summary>
+            Executes the database data reader.
+            </summary>
+            <param name="behavior">The behavior.</param>
+            <returns></returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetCommand.ExecuteNonQuery">
+            <summary>
+            Executes the non query.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetCommand.ExecuteScalar">
+            <summary>
+            Executes the query and returns the first column of the first row in the result set returned by the query. All other columns and rows are ignored
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetCommand.Prepare">
+            <summary>
+            Creates a prepared (or compiled) version of the command on the data source
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetCommand.UpdatedRowSource">
+            <summary>
+            Gets or sets how command results are applied to the DataRow when used by the Update method of a DbDataAdapter.
+            </summary>
+            <value>
+            The updated row source.
+            </value>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetCommand.System#ICloneable#Clone">
+            <summary>
+            Clones this instance.
+            </summary>
+            <returns>The created object</returns>
+        </member>
+        <member name="T:EntityFrameworkCore.Jet.Data.JetConfiguration">
+            <summary>
+            Jet configuration
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConfiguration.TimeSpanOffset">
+            <summary>
+            The time span offset (Jet does not support timespans)
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConfiguration.IntegerNullValue">
+            <summary>
+            Gets or sets the integer null value returned by queries. This should solve a Jet issue
+            that if I do a UNION ALL of null, int and null the Jet raises an error
+            </summary>
+            <value>
+            The integer null value.
+            </value>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConfiguration.DUAL">
+            <summary>
+            The DUAL table or query
+            </summary>
+        </member>
+        <member name="F:EntityFrameworkCore.Jet.Data.JetConfiguration.DUALForMdb">
+            <summary>
+            The dual table for accdb
+            </summary>
+        </member>
+        <member name="F:EntityFrameworkCore.Jet.Data.JetConfiguration.DUALForAccdb">
+            <summary>
+            The dual table for accdb
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConfiguration.ShowSqlStatements">
+            <summary>
+            Gets or sets a value indicating whether show SQL statements.
+            </summary>
+            <value>
+              <c>true</c> to show SQL statements; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConfiguration.UseConnectionPooling">
+            <summary>
+            Gets or sets a value indicating whether the connection pooling should be used
+            </summary>
+            <value>
+            <c>true</c> to use the connection pooling; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConfiguration.UseDefaultValueOnDBNullConversionError">
+            <summary>
+            Gets or sets a value indicating whether to return a default value for the column
+            if the column is not meant to be null and somehow the value stored is actually null
+            </summary>
+            <value>
+            <c>true</c> to return a default value; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:EntityFrameworkCore.Jet.Data.JetConnection"/> class.
+            </summary>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:EntityFrameworkCore.Jet.Data.JetConnection"/> class.
+            </summary>
+            <param name="fileNameOrConnectionString">The file name or connection string (either ODBC or OLE DB).</param>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.#ctor(System.Data.Common.DbProviderFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:EntityFrameworkCore.Jet.Data.JetConnection"/> class.
+            </summary>
+            <param name="dataAccessProviderFactory">The underlying provider factory to use by Jet. Supported are
+            `OdbcFactory` and `OleDbFactory`.</param>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.#ctor(System.String,System.Data.Common.DbProviderFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:EntityFrameworkCore.Jet.Data.JetConnection"/> class.
+            </summary>
+            <param name="fileNameOrConnectionString">The file name or connection string (either ODBC or OLE DB).</param>
+            <param name="dataAccessProviderFactory">The underlying provider factory to use by Jet. Supported are
+            `OdbcFactory` and `OleDbFactory`.</param>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.IsEmpty">
+            <summary>
+            Gets or sets a value indicating whether this instance is empty.
+            It is similar to connection to master and can be used only to create and drop databases
+            </summary>
+            <value>
+              <c>true</c> if this instance is empty; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.DbProviderFactory">
+            <summary>
+            Gets the <see cref="T:System.Data.Common.DbProviderFactory" /> for this <see cref="T:System.Data.Common.DbConnection" />.
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.DataAccessProviderFactory">
+            <summary>
+            Gets or sets an `OdbcFactory` or `OleDbFactory` object, to use as the underlying data
+            access API. Jet uses this provider factory internally for all data access operations.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">This property can only be set as long as the connection is closed.</exception>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.JetFactory">
+            <summary>
+            Gets a `JetProviderFactory` object, that can be used to create Jet specific objects (e.g. `JetCommand`).
+            </summary>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.BeginDbTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Starts a database transaction.
+            </summary>
+            <param name="isolationLevel">Specifies the isolation level for the transaction.</param>
+            <returns>
+            An object representing the new transaction.
+            </returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.ChangeDatabase(System.String)">
+            <summary>
+            Changes the current database for an open connection.
+            </summary>
+            <param name="databaseName">Specifies the name of the database for the connection to use.</param>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.Close">
+            <summary>
+            Closes the connection to the database. This is the preferred method of closing any open connection.
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.ConnectionString">
+            <summary>
+            Gets or sets the string used to open the connection.
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.ConnectionTimeout">
+            <summary>
+            Gets the time to wait while establishing a connection before terminating the attempt and generating an error.
+            For Jet this time is unlimited
+            </summary>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.CreateDbCommand">
+            <summary>
+            Creates and returns a <see cref="T:System.Data.Common.DbCommand" /> object associated with the current connection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Data.Common.DbCommand" /> object.
+            </returns>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.Database">
+            <summary>
+            This property is always empty in Jet. Use DataSource property instead.
+            Gets the name of the current database after a connection is opened, or the database name specified 
+            in the connection string before the connection is opened.
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.DataSource">
+            <summary>
+            Gets the name of the file to open.
+            </summary>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.ComponentModel.Component" /> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.EnlistTransaction(System.Transactions.Transaction)">
+            <summary>
+            Enlists in the specified transaction.
+            </summary>
+            <param name="transaction">A reference to an existing <see cref="T:System.Transactions.Transaction" /> in which to enlist.</param>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.GetSchema(System.String)">
+            <summary>
+            Returns schema information for the data source of this <see cref="T:System.Data.Common.DbConnection" /> using the specified string for the schema name.
+            </summary>
+            <param name="collectionName">Specifies the name of the schema to return.</param>
+            <returns>
+            A <see cref="T:System.Data.DataTable" /> that contains schema information.
+            </returns>
+            <PermissionSet>
+              <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" PathDiscovery="*AllFiles*" />
+            </PermissionSet>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.GetSchema">
+            <summary>
+            Returns schema information for the data source of this <see cref="T:System.Data.Common.DbConnection" />.
+            </summary>
+            <returns>
+            A <see cref="T:System.Data.DataTable" /> that contains schema information.
+            </returns>
+            <PermissionSet>
+              <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" PathDiscovery="*AllFiles*" />
+            </PermissionSet>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.GetSchema(System.String,System.String[])">
+            <summary>
+            Returns schema information for the data source of this <see cref="T:System.Data.Common.DbConnection" /> using the specified string for the schema name and the specified string array for the restriction values.
+            </summary>
+            <param name="collectionName">Specifies the name of the schema to return.</param>
+            <param name="restrictionValues">Specifies a set of restriction values for the requested schema.</param>
+            <returns>
+            A <see cref="T:System.Data.DataTable" /> that contains schema information.
+            </returns>
+            <PermissionSet>
+              <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" PathDiscovery="*AllFiles*" />
+            </PermissionSet>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.Open">
+            <summary>
+            Opens a database connection with the settings specified by the <see cref="P:System.Data.Common.DbConnection.ConnectionString" />.
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.ServerVersion">
+            <summary>
+            Gets a string that represents the version of the server to which the object is connected.
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetConnection.State">
+            <summary>
+            Gets a string that describes the state of the connection.
+            </summary>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.System#ICloneable#Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.ClearPool(EntityFrameworkCore.Jet.Data.JetConnection)">
+            <summary>
+            Clears the pool.
+            </summary>
+            <param name="connection">The connection.</param>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetConnection.ClearAllPools">
+            <summary>
+            Clears all pools.
+            </summary>
+        </member>
+        <member name="T:EntityFrameworkCore.Jet.Data.JetFactory">
+            <summary>
+            Jet provider factory
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.JetFactory.CanCreateDataSourceEnumerator">
+            <summary>
+            Specifies whether the specific <see cref="T:System.Data.Common.DbProviderFactory" /> supports the <see cref="T:System.Data.Common.DbDataSourceEnumerator" /> class.
+            </summary>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetFactory.CreateCommand">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbCommand" /> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbCommand" />.
+            </returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetFactory.CreateCommandBuilder">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbCommandBuilder" /> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbCommandBuilder" />.
+            </returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetFactory.CreateConnection">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbConnection" /> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbConnection" />.
+            </returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetFactory.CreateConnectionStringBuilder">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.
+            </returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetFactory.CreateDataAdapter">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbDataAdapter" /> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbDataAdapter" />.
+            </returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetFactory.CreateDataSourceEnumerator">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbDataSourceEnumerator" /> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbDataSourceEnumerator" />.
+            </returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetFactory.CreateParameter">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbParameter" /> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbParameter" />.
+            </returns>
+        </member>
+        <member name="T:EntityFrameworkCore.Jet.Data.JetProviderManifest">
+            <summary>
+            This class is a copy of the Provider Manifest for Jet of the JetEntityFrameworkProvider
+            Is used only for accessing to XML resources
+            </summary>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetSyntaxHelper.QuoteIdentifier(System.String)">
+            <summary>
+            Quotes an identifier
+            </summary>
+            <param name="name">Identifier name</param>
+            <returns>The quoted identifier</returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.JetSyntaxHelper.EscapeLikeText(System.String,System.Boolean@)">
+            <summary>
+            Function to detect wildcard characters * ? [ #) and escape them
+            This escaping is used when StartsWith, EndsWith and Contains canonical and CLR functions
+            are translated to their equivalent LIKE expression
+            </summary>
+            <param name="text">Original input as specified by the user</param>
+            <param name="usedEscapeChar">true if the escaping was performed, false if no escaping was required</param>
+            <returns>The escaped string that can be used as pattern in a LIKE expression</returns>
+        </member>
+        <member name="T:EntityFrameworkCore.Jet.Data.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:EntityFrameworkCore.Jet.Data.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:EntityFrameworkCore.Jet.Data.XmlObjectSerializer">
+            <summary>
+            Object serializer
+            </summary>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.XmlObjectSerializer.GetXml(System.Object)">
+            <summary>
+            Gets the xml rapresenting the object
+            </summary>
+            <param name="o">The object</param>
+            <returns>The xml rapresenting the object</returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.XmlObjectSerializer.GetObject(System.String,System.Type)">
+            <summary>
+            Creates a new object of the specified type and sets the property readed from xml
+            </summary>
+            <param name="xml">The xml</param>
+            <param name="objectType">The type of the object that will be created</param>
+            <returns>The created object</returns>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.XmlObjectSerializer.WriteFile(System.String,System.Object)">
+            <summary>
+            Writes a file with the xml that rapresent the object
+            </summary>
+            <param name="path">File path</param>
+            <param name="o">Object to write</param>
+        </member>
+        <member name="M:EntityFrameworkCore.Jet.Data.XmlObjectSerializer.ReadFile(System.String,System.Type)">
+            <summary>
+            Create an object of the specified type and sets the properties reading from the xml file
+            </summary>
+            <param name="path">File path</param>
+            <param name="objectType">The type of the object that will be created</param>
+            <returns>The created object</returns>
+        </member>
+    </members>
+</doc>
